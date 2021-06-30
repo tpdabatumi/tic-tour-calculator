@@ -270,7 +270,216 @@
                   }}</span>
                 </p>
               </div>
+              <div class="col-md-12 mb-1 mt-2 text-center">
+                <button
+                  class="btn btn-link text-decoration-none"
+                  @click="openInvoiceModal"
+                >
+                  <i class="fas fa-receipt fa-sm me-1"></i>
+                  ინვოისი
+                </button>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid invoice-modal bg-white" v-show="invoiceModal">
+      <span class="close-modal" @click="closeInvoiceModal">
+        <i class="fas fa-times fa-2x"></i>
+      </span>
+      <div class="modal-centered-container">
+        <div class="card-container">
+          <div class="col-md-12">
+            <ul class="list-group">
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+                v-if="touristCount > 0"
+              >
+                ადამიანთა რაოდენობა
+                <span class="badge text-dark rounded-pill">{{
+                  touristCount
+                }}</span>
+              </li>
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+                v-if="transportTotal > 0"
+              >
+                ტრანსპორტი
+                <span class="badge text-dark rounded-pill">{{
+                  transportTotal
+                }}</span>
+              </li>
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+                v-if="guideTotal > 0"
+              >
+                გიდი
+                <span class="badge text-dark rounded-pill">{{
+                  guideTotal
+                }}</span>
+              </li>
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+                v-if="foodTotal > 0"
+              >
+                კვება
+                <span class="badge text-dark rounded-pill">{{
+                  foodTotal
+                }}</span>
+              </li>
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+                v-if="museumTotal > 0"
+              >
+                მუზეუმი
+                <span class="badge text-dark rounded-pill">{{
+                  museumTotal
+                }}</span>
+              </li>
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+                v-if="folkloreTotal > 0"
+              >
+                ფოლკლორი
+                <span class="badge text-dark rounded-pill">{{
+                  folkloreTotal
+                }}</span>
+              </li>
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+                v-if="additionalServiceTotal > 0"
+              >
+                დამატებითი სერვისი
+                <span class="badge text-dark rounded-pill">{{
+                  additionalServiceTotal
+                }}</span>
+              </li>
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                  bg-light
+                "
+              >
+                მომსახურების {{ serviceTax }}%
+                <span class="badge bg-white text-dark rounded-pill">{{
+                  serviceTaxCalculated.toFixed(2)
+                }}</span>
+              </li>
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                  bg-light
+                "
+              >
+                დღგ {{ vat }}%
+                <span class="badge bg-white text-dark rounded-pill">{{
+                  vatCalculated.toFixed(2)
+                }}</span>
+              </li>
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+              >
+                ხარჯი საკომისიოს გარეშე
+                <span class="badge bg-info text-dark rounded-pill">{{
+                  noComissionExpenses.toFixed(2)
+                }}</span>
+              </li>
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+              >
+                ხარჯი საკომისიოს ჩათვლით
+                <span class="badge bg-warning text-dark rounded-pill">{{
+                  comissionExpenses.toFixed(2)
+                }}</span>
+              </li>
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+              >
+                ტურის ფასი ჯამში
+                <span class="badge bg-success text-dark rounded-pill">{{
+                  totalPrice.toFixed(2)
+                }}</span>
+              </li>
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+              >
+                ტურის ფასი ერთ ადამიანზე
+                <span class="badge bg-danger text-dark rounded-pill">{{
+                  perPersonPrice.toFixed(2)
+                }}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="text-center my-3">
+            <button
+              class="btn btn-link text-decoration-none"
+              onclick="window.print()"
+            >
+              <i class="fas fa-print fa-sm me-1"></i>
+              ამობეჭდვა
+            </button>
           </div>
         </div>
       </div>
@@ -305,14 +514,15 @@ export default {
         name: "სპრინტერი",
         price: 250,
       },
+      touristCount: 10,
       guidePrice: 80,
       foodPrice: 25,
       museumPrice: 3,
       folklorePrice: 0,
       additionalServicePrice: 0,
-      touristCount: 10,
       serviceTax: 15,
       vat: 18,
+      invoiceModal: false,
     };
   },
   computed: {
@@ -363,11 +573,17 @@ export default {
   methods: {
     decrementTouristCount() {
       if (this.touristCount > 1) {
-        this.touristCount -= 1;
+        this.touristCount--;
       }
     },
     incrementTouristCount() {
-      this.touristCount += 1;
+      this.touristCount++;
+    },
+    openInvoiceModal() {
+      this.invoiceModal = true;
+    },
+    closeInvoiceModal() {
+      this.invoiceModal = false;
     },
   },
 };
