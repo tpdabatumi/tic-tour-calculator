@@ -11,13 +11,41 @@
             <div class="card shadow border-0 animation">
               <router-link class="stretched-link" :to="{ name: 'Machakhela' }">
                 <img
-                  class="w-100 h-100 cover rounded-3"
+                  class="img-size cover rounded-3"
                   src="../assets/img/machakhela.jpg"
                   alt="Machakhela"
                 />
               </router-link>
               <span class="position-absolute text-white fw-bold m-2 fs-6">
                 მაჭახელას თოფის გზა
+              </span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 my-2">
+            <div class="card shadow border-0 animation">
+              <router-link class="stretched-link" :to="{ name: 'Wine' }">
+                <img
+                  class="img-size cover rounded-3"
+                  src="../assets/img/wine.jpg"
+                  alt="Wine"
+                />
+              </router-link>
+              <span class="position-absolute text-white fw-bold m-2 fs-6">
+                ღვინის მარშრუტი
+              </span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 my-2">
+            <div class="card shadow border-0 animation">
+              <router-link class="stretched-link" :to="{ name: 'Mtirala' }">
+                <img
+                  class="img-size cover rounded-3"
+                  src="../assets/img/mtirala.jpg"
+                  alt="Mtirala"
+                />
+              </router-link>
+              <span class="position-absolute text-white fw-bold m-2 fs-6">
+                მტირალას ეროვნული პარკი
               </span>
             </div>
           </div>
@@ -56,5 +84,10 @@ export default {
 
 .card-container {
   max-width: 992px;
+}
+
+.img-size {
+  width: 100%;
+  height: 120px;
 }
 </style>
