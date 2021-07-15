@@ -2,7 +2,7 @@
   <div class="container-fluid main-background bg-image">
     <div class="card card-container shadow border-0 rounded-3 my-3">
       <div class="card-header border-0">
-        <h3 class="mt-2 fw-bold">მაჭახელას თოფის გზა</h3>
+        <h3 class="mt-2 fw-bold">ჩირუხი, ხიხანი, გოდერძი, მწვანე ტბა</h3>
         <router-link
           class="btn btn-link p-0 text-decoration-none"
           :to="{ name: 'Home' }"
@@ -119,44 +119,21 @@
         <div class="form-group p-3">
           <div class="row">
             <div class="col-md-6">
-              <label for="museumPrice">მუზეუმი</label>
+              <label for="accommodationPrice">განთავსება</label>
               <input
                 type="text"
-                id="museumPrice"
+                id="accommodationPrice"
                 class="form-control"
-                v-model.number="museumPrice"
+                v-model.number="accommodationPrice"
               />
             </div>
             <div class="col-md-6">
-              <label for="museumTotal">მუზეუმის ფასი ჯამში</label>
+              <label for="accommodationTotal">განთავსების ფასი ჯამში</label>
               <input
                 type="text"
-                id="museumTotal"
+                id="accommodationTotal"
                 class="form-control"
-                v-model.number="museumTotal"
-                disabled
-              />
-            </div>
-          </div>
-        </div>
-        <div class="form-group p-3">
-          <div class="row">
-            <div class="col-md-6">
-              <label for="folklorePrice">ფოლკლორი</label>
-              <input
-                type="text"
-                id="folklorePrice"
-                class="form-control"
-                v-model.number="folklorePrice"
-              />
-            </div>
-            <div class="col-md-6">
-              <label for="folkloreTotal">ფოლკლორის ფასი ჯამში</label>
-              <input
-                type="text"
-                id="folkloreTotal"
-                class="form-control"
-                v-model.number="folkloreTotal"
+                v-model.number="accommodationTotal"
                 disabled
               />
             </div>
@@ -355,25 +332,11 @@
                   justify-content-between
                   align-items-center
                 "
-                v-if="museumTotal > 0"
+                v-if="accommodationTotal > 0"
               >
-                მუზეუმი
+                განთავსება
                 <span class="badge text-dark rounded-pill">{{
-                  museumTotal
-                }}</span>
-              </li>
-              <li
-                class="
-                  list-group-item
-                  d-flex
-                  justify-content-between
-                  align-items-center
-                "
-                v-if="folkloreTotal > 0"
-              >
-                ფოლკლორი
-                <span class="badge text-dark rounded-pill">{{
-                  folkloreTotal
+                  accommodationTotal
                 }}</span>
               </li>
               <li
@@ -489,36 +452,30 @@
 
 <script>
 export default {
-  name: "MachakhelaPage",
+  name: "Machakhela",
   data() {
     return {
       transportPrices: [
         {
           id: 1,
-          name: "სედანი",
-          price: 180,
+          name: "დელიკა",
+          price: 450,
         },
         {
           id: 2,
-          name: "მინივენი",
-          price: 200,
-        },
-        {
-          id: 3,
-          name: "სპრინტერი",
-          price: 250,
+          name: "ჯიპი",
+          price: 550,
         },
       ],
       selectedTransport: {
-        id: 3,
-        name: "სპრინტერი",
-        price: 250,
+        id: 1,
+        name: "დელიკა",
+        price: 450,
       },
       touristCount: 10,
-      guidePrice: 80,
-      foodPrice: 25,
-      museumPrice: 3,
-      folklorePrice: 0,
+      guidePrice: 150,
+      foodPrice: 100,
+      accommodationPrice: 50,
       additionalServicePrice: 0,
       serviceTax: 15,
       vat: 18,
@@ -535,11 +492,8 @@ export default {
     foodTotal() {
       return this.foodPrice * this.touristCount;
     },
-    museumTotal() {
-      return this.museumPrice * this.touristCount;
-    },
-    folkloreTotal() {
-      return this.folklorePrice * this.touristCount;
+    accommodationTotal() {
+      return this.accommodationPrice * this.touristCount;
     },
     additionalServiceTotal() {
       return this.additionalServicePrice * this.touristCount;
@@ -549,8 +503,7 @@ export default {
         this.transportTotal +
         Number(this.guideTotal) +
         this.foodTotal +
-        this.museumTotal +
-        this.folkloreTotal +
+        this.accommodationTotal +
         this.additionalServiceTotal
       );
     },

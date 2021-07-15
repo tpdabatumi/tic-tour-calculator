@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Machakhela from "../views/Machakhela.vue";
 import Wine from "../views/Wine.vue";
 import Mtirala from "../views/Mtirala.vue";
+import Chirukhi from "../views/Chirukhi.vue";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/mtirala",
     name: "Mtirala",
     component: Mtirala,
+  },
+  {
+    path: "/chirukhi",
+    name: "Chirukhi",
+    component: Chirukhi,
   },
 ];
 
