@@ -5,6 +5,7 @@ import Wine from "../views/Wine.vue";
 import Mtirala from "../views/Mtirala.vue";
 import Chirukhi from "../views/Chirukhi.vue";
 import Gobroneti from "../views/Gobroneti.vue";
+import Merisi from "../views/Merisi.vue";
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: "/gobroneti",
     name: "Gobroneti",
     component: Gobroneti,
+  },
+  {
+    path: "/merisi",
+    name: "Merisi",
+    component: Merisi,
   },
 ];
 
