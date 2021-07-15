@@ -6,6 +6,7 @@ import Mtirala from "../views/Mtirala.vue";
 import Chirukhi from "../views/Chirukhi.vue";
 import Gobroneti from "../views/Gobroneti.vue";
 import Merisi from "../views/Merisi.vue";
+import Mirveti from "../views/Mirveti.vue";
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: "/merisi",
     name: "Merisi",
     component: Merisi,
+  },
+  {
+    path: "/mirveti",
+    name: "Mirveti",
+    component: Mirveti,
   },
 ];
 

@@ -2,7 +2,7 @@
   <div class="container-fluid main-background bg-image">
     <div class="card card-container shadow border-0 rounded-3 my-3">
       <div class="card-header border-0">
-        <h3 class="mt-2 fw-bold">მტირალას ეროვნული პარკი</h3>
+        <h3 class="mt-2 fw-bold">მირვეთი - ველომარშრუტი</h3>
         <router-link
           class="btn btn-link p-0 text-decoration-none"
           :to="{ name: 'Home' }"
@@ -111,6 +111,29 @@
                 id="foodTotal"
                 class="form-control"
                 v-model.number="foodTotal"
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-group p-3">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="bikePrice">ველოსიპედი</label>
+              <input
+                type="text"
+                id="bikePrice"
+                class="form-control"
+                v-model.number="bikePrice"
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="bikeTotal">ველოსიპედის ფასი ჯამში</label>
+              <input
+                type="text"
+                id="bikeTotal"
+                class="form-control"
+                v-model.number="bikeTotal"
                 disabled
               />
             </div>
@@ -309,6 +332,20 @@
                   justify-content-between
                   align-items-center
                 "
+                v-if="bikeTotal > 0"
+              >
+                ველოსიპედი
+                <span class="badge text-dark rounded-pill">{{
+                  bikeTotal
+                }}</span>
+              </li>
+              <li
+                class="
+                  list-group-item
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
                 v-if="additionalServiceTotal > 0"
               >
                 დამატებითი სერვისი
@@ -415,34 +452,35 @@
 
 <script>
 export default {
-  name: "Mtirala",
+  name: "Mirveti",
   data() {
     return {
       transportPrices: [
         {
           id: 1,
           name: "სედანი",
-          price: 180,
+          price: 150,
         },
         {
           id: 2,
           name: "მინივენი",
-          price: 200,
+          price: 180,
         },
         {
           id: 3,
           name: "სპრინტერი",
-          price: 250,
+          price: 200,
         },
       ],
       selectedTransport: {
         id: 2,
         name: "მინივენი",
-        price: 200,
+        price: 180,
       },
       touristCount: 4,
-      guidePrice: 100,
-      foodPrice: 25,
+      guidePrice: 80,
+      foodPrice: 20,
+      bikePrice: 0,
       additionalServicePrice: 0,
       serviceTax: 15,
       vat: 18,
@@ -459,6 +497,9 @@ export default {
     foodTotal() {
       return this.foodPrice * this.touristCount;
     },
+    bikeTotal() {
+      return this.bikePrice * this.touristCount;
+    },
     additionalServiceTotal() {
       return this.additionalServicePrice * this.touristCount;
     },
@@ -467,6 +508,7 @@ export default {
         this.transportTotal +
         Number(this.guideTotal) +
         this.foodTotal +
+        this.bikeTotal +
         this.additionalServiceTotal
       );
     },
@@ -519,7 +561,7 @@ export default {
       rgba(0, 0, 0, 0.7) 100%,
       rgba(0, 0, 0, 0.7) 100%
     ),
-    url(../assets/img/mtirala.jpg);
+    url(../assets/img/mirveti.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

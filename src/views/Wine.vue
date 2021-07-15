@@ -473,9 +473,9 @@ export default {
         },
       ],
       selectedTransport: {
-        id: 1,
-        name: "სედანი",
-        price: 150,
+        id: 2,
+        name: "მინივენი",
+        price: 230,
       },
       touristCount: 4,
       guidePrice: 80,
