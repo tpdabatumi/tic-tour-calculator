@@ -16,7 +16,15 @@
                   alt="Machakhela"
                 />
               </router-link>
-              <span class="position-absolute text-white fw-bold m-2 fs-6">
+              <span
+                class="
+                  position-absolute
+                  text-white text-shadow
+                  fw-bold
+                  m-2
+                  fs-6
+                "
+              >
                 მაჭახელას თოფის გზა
               </span>
             </div>
@@ -30,7 +38,15 @@
                   alt="Wine"
                 />
               </router-link>
-              <span class="position-absolute text-white fw-bold m-2 fs-6">
+              <span
+                class="
+                  position-absolute
+                  text-white text-shadow
+                  fw-bold
+                  m-2
+                  fs-6
+                "
+              >
                 ღვინის მარშრუტი
               </span>
             </div>
@@ -44,7 +60,15 @@
                   alt="Mtirala"
                 />
               </router-link>
-              <span class="position-absolute text-white fw-bold m-2 fs-6">
+              <span
+                class="
+                  position-absolute
+                  text-white text-shadow
+                  fw-bold
+                  m-2
+                  fs-6
+                "
+              >
                 მტირალას ეროვნული პარკი
               </span>
             </div>
@@ -58,8 +82,38 @@
                   alt="Chirukhi"
                 />
               </router-link>
-              <span class="position-absolute text-white fw-bold m-2 fs-6">
+              <span
+                class="
+                  position-absolute
+                  text-white text-shadow
+                  fw-bold
+                  m-2
+                  fs-6
+                "
+              >
                 ჩირუხი, ხიხანი, გოდერძი, მწვანე ტბა
+              </span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 my-2">
+            <div class="card shadow border-0 animation">
+              <router-link class="stretched-link" :to="{ name: 'Gobroneti' }">
+                <img
+                  class="img-size cover rounded-3"
+                  src="../assets/img/gobroneti.jpg"
+                  alt="Gobroneti"
+                />
+              </router-link>
+              <span
+                class="
+                  position-absolute
+                  text-white text-shadow
+                  fw-bold
+                  m-2
+                  fs-6
+                "
+              >
+                გობრონეთი
               </span>
             </div>
           </div>
@@ -103,5 +157,9 @@ export default {
 .img-size {
   width: 100%;
   height: 120px;
+}
+
+.text-shadow {
+  text-shadow: 0px 0px 5px #000;
 }
 </style>

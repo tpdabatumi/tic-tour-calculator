@@ -2,7 +2,7 @@
   <div class="container-fluid main-background bg-image">
     <div class="card card-container shadow border-0 rounded-3 my-3">
       <div class="card-header border-0">
-        <h3 class="mt-2 fw-bold">ჩირუხი, ხიხანი, გოდერძი, მწვანე ტბა</h3>
+        <h3 class="mt-2 fw-bold">გობრონეთი</h3>
         <router-link
           class="btn btn-link p-0 text-decoration-none"
           :to="{ name: 'Home' }"
@@ -119,21 +119,21 @@
         <div class="form-group p-3">
           <div class="row">
             <div class="col-md-6">
-              <label for="accommodationPrice">განთავსება</label>
+              <label for="folklorePrice">ფოლკლორი</label>
               <input
                 type="text"
-                id="accommodationPrice"
+                id="folklorePrice"
                 class="form-control"
-                v-model.number="accommodationPrice"
+                v-model.number="folklorePrice"
               />
             </div>
             <div class="col-md-6">
-              <label for="accommodationTotal">განთავსების ფასი ჯამში</label>
+              <label for="folkloreTotal">ფოლკლორის ფასი ჯამში</label>
               <input
                 type="text"
-                id="accommodationTotal"
+                id="folkloreTotal"
                 class="form-control"
-                v-model.number="accommodationTotal"
+                v-model.number="folkloreTotal"
                 disabled
               />
             </div>
@@ -332,11 +332,11 @@
                   justify-content-between
                   align-items-center
                 "
-                v-if="accommodationTotal > 0"
+                v-if="folkloreTotal > 0"
               >
-                განთავსება
+                ფოლკლორი
                 <span class="badge text-dark rounded-pill">{{
-                  accommodationTotal
+                  folkloreTotal
                 }}</span>
               </li>
               <li
@@ -452,30 +452,35 @@
 
 <script>
 export default {
-  name: "Chirukhi",
+  name: "Gobroneti",
   data() {
     return {
       transportPrices: [
         {
           id: 1,
-          name: "დელიკა",
-          price: 450,
+          name: "სედანი",
+          price: 150,
         },
         {
           id: 2,
-          name: "ჯიპი",
-          price: 550,
+          name: "მინივენი",
+          price: 200,
+        },
+        {
+          id: 3,
+          name: "სპრინტერი",
+          price: 250,
         },
       ],
       selectedTransport: {
-        id: 1,
-        name: "დელიკა",
-        price: 450,
+        id: 3,
+        name: "სპრინტერი",
+        price: 250,
       },
       touristCount: 10,
-      guidePrice: 150,
-      foodPrice: 100,
-      accommodationPrice: 50,
+      guidePrice: 80,
+      foodPrice: 25,
+      folklorePrice: 0,
       additionalServicePrice: 0,
       serviceTax: 15,
       vat: 18,
@@ -492,8 +497,8 @@ export default {
     foodTotal() {
       return this.foodPrice * this.touristCount;
     },
-    accommodationTotal() {
-      return this.accommodationPrice * this.touristCount;
+    folkloreTotal() {
+      return this.folklorePrice * this.touristCount;
     },
     additionalServiceTotal() {
       return this.additionalServicePrice * this.touristCount;
@@ -503,7 +508,7 @@ export default {
         this.transportTotal +
         Number(this.guideTotal) +
         this.foodTotal +
-        this.accommodationTotal +
+        this.folkloreTotal +
         this.additionalServiceTotal
       );
     },
@@ -556,7 +561,7 @@ export default {
       rgba(0, 0, 0, 0.7) 100%,
       rgba(0, 0, 0, 0.7) 100%
     ),
-    url(../assets/img/chirukhi.jpg);
+    url(../assets/img/gobroneti.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

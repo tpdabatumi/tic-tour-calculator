@@ -4,6 +4,7 @@ import Machakhela from "../views/Machakhela.vue";
 import Wine from "../views/Wine.vue";
 import Mtirala from "../views/Mtirala.vue";
 import Chirukhi from "../views/Chirukhi.vue";
+import Gobroneti from "../views/Gobroneti.vue";
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: "/chirukhi",
     name: "Chirukhi",
     component: Chirukhi,
+  },
+  {
+    path: "/gobroneti",
+    name: "Gobroneti",
+    component: Gobroneti,
   },
 ];
 
