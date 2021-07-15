@@ -8,6 +8,8 @@ import Gobroneti from "../views/Gobroneti.vue";
 import Merisi from "../views/Merisi.vue";
 import Mirveti from "../views/Mirveti.vue";
 import Tago from "../views/Tago.vue";
+import Kapnistavi from "../views/Kapnistavi.vue";
+import Ghorjomi from "../views/Ghorjomi.vue";
 
 const routes = [
   {
@@ -54,6 +56,16 @@ const routes = [
     path: "/tago",
     name: "Tago",
     component: Tago,
+  },
+  {
+    path: "/kapnistavi",
+    name: "Kapnistavi",
+    component: Kapnistavi,
+  },
+  {
+    path: "/ghorjomi",
+    name: "Ghorjomi",
+    component: Ghorjomi,
   },
 ];
 

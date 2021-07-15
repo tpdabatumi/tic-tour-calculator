@@ -183,6 +183,50 @@
               </span>
             </div>
           </div>
+          <div class="col-6 col-md-4 col-lg-3 my-2">
+            <div class="card shadow border-0 animation">
+              <router-link class="stretched-link" :to="{ name: 'Kapnistavi' }">
+                <img
+                  class="img-size cover rounded-3"
+                  src="../assets/img/kapnistavi.jpg"
+                  alt="Kapnistavi"
+                />
+              </router-link>
+              <span
+                class="
+                  position-absolute
+                  text-white text-shadow
+                  fw-bold
+                  m-2
+                  fs-6
+                "
+              >
+                კაპნისთავი
+              </span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 my-2">
+            <div class="card shadow border-0 animation">
+              <router-link class="stretched-link" :to="{ name: 'Ghorjomi' }">
+                <img
+                  class="img-size cover rounded-3"
+                  src="../assets/img/ghorjomi.jpg"
+                  alt="Ghorjomi"
+                />
+              </router-link>
+              <span
+                class="
+                  position-absolute
+                  text-white text-shadow
+                  fw-bold
+                  m-2
+                  fs-6
+                "
+              >
+                ღორჯომი-ბახმარო
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
