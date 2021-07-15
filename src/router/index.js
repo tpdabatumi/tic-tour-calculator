@@ -7,6 +7,7 @@ import Chirukhi from "../views/Chirukhi.vue";
 import Gobroneti from "../views/Gobroneti.vue";
 import Merisi from "../views/Merisi.vue";
 import Mirveti from "../views/Mirveti.vue";
+import Tago from "../views/Tago.vue";
 
 const routes = [
   {
@@ -48,6 +49,11 @@ const routes = [
     path: "/mirveti",
     name: "Mirveti",
     component: Mirveti,
+  },
+  {
+    path: "/tago",
+    name: "Tago",
+    component: Tago,
   },
 ];
 

@@ -161,6 +161,28 @@
               </span>
             </div>
           </div>
+          <div class="col-6 col-md-4 col-lg-3 my-2">
+            <div class="card shadow border-0 animation">
+              <router-link class="stretched-link" :to="{ name: 'Tago' }">
+                <img
+                  class="img-size cover rounded-3"
+                  src="../assets/img/tago.jpg"
+                  alt="Tago"
+                />
+              </router-link>
+              <span
+                class="
+                  position-absolute
+                  text-white text-shadow
+                  fw-bold
+                  m-2
+                  fs-6
+                "
+              >
+                თაგო-სხალთის საფეხმავლო მარშრუტი
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
