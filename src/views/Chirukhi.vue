@@ -472,7 +472,7 @@ export default {
         name: "დელიკა",
         price: 450,
       },
-      touristCount: 10,
+      touristCount: 6,
       guidePrice: 150,
       foodPrice: 100,
       accommodationPrice: 50,
