@@ -54,7 +54,7 @@
                   :key="transportPrice.id"
                   :value="transportPrice"
                 >
-                  {{ transportPrice.name }}
+                  {{ transportPrice.name }} - {{ transportPrice.owner }}
                 </option>
               </select>
             </div>
@@ -497,22 +497,44 @@ export default {
           id: 1,
           name: "სედანი",
           price: 180,
+          owner: "თემურ წულუკიძე",
         },
         {
           id: 2,
           name: "მინივენი",
           price: 200,
+          owner: "თემურ წულუკიძე",
         },
         {
           id: 3,
           name: "სპრინტერი",
           price: 250,
+          owner: "თემურ წულუკიძე",
+        },
+        {
+          id: 4,
+          name: "სედანი",
+          price: 130,
+          owner: "ტაქსი +",
+        },
+        {
+          id: 5,
+          name: "მინივენი",
+          price: 150,
+          owner: "ტაქსი +",
+        },
+        {
+          id: 6,
+          name: "სპრინტერი",
+          price: 230,
+          owner: "ტაქსი +",
         },
       ],
       selectedTransport: {
         id: 3,
         name: "სპრინტერი",
         price: 250,
+        owner: "თემურ წულუკიძე",
       },
       touristCount: 10,
       guidePrice: 80,
